@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 import {Navbar} from './components/navbar/Nav'
+import {Error} from './components/error/Error';
 import {Register} from './components/register/Register';
 import {Login} from './components/login/Login';
 import {Protected} from './components/protected/Protected';
@@ -17,6 +18,7 @@ function App() {
     <Provider store={store}>
     <Router>
       <Navbar/>
+      <Error/>
       <Switch>
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>

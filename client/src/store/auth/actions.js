@@ -28,7 +28,7 @@ export  const loadUser = () => async (dispatch) => {
         payload: res.data
       });
     } catch (err) {
-      dispatch ({ type: AUTH_ERROR, payload: err });
+      dispatch ({ type: AUTH_ERROR, payload: err.response.data.msg });
     }
   };
 
@@ -49,7 +49,7 @@ export  const loadUser = () => async (dispatch) => {
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
-        payload: err.response.data.msg
+        payload: err.message
       });
     }
   };

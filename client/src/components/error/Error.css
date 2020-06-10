@@ -1,0 +1,13 @@
+.error__container_visible {
+  background-color: rosybrown;
+  padding: 20px;
+}
+
+.error__container_invisible {
+  display: none;
+}
+
+.error__text {
+  text-align: center;
+  color: rgb(128, 0, 38);
+}
