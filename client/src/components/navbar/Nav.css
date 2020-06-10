@@ -1,0 +1,20 @@
+.navbar__container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgba(5, 5, 68, 0.979);
+  margin: 0;
+}
+
+.navbar__item {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+.navbar__item:hover {
+  cursor: pointer;
+}

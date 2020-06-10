@@ -1,0 +1,20 @@
+.login__container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.login__item {
+  width: 100%;
+}
+
+.login__item input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+.login__header {
+  text-align: center;
+}

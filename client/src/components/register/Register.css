@@ -1,0 +1,14 @@
+.register__container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.register__item {
+  width: 100%;
+}
+
+.register__header {
+  text-align: center;
+}
