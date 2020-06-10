@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
@@ -8,8 +8,14 @@ import './Login.css';
 export const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const loading = useSelector(state => state.auth.loading)
+  const {loading, isAuthenticated} = useSelector(state => state.auth)
 
+  useEffect(() => {
+    if(!loading && isAuthenticated) {
+      history.push("/protected")
+    }
+  },[loading,isAuthenticated])
+  
   const [user, setUser] = useState({
     email: '',
     password: ''
@@ -27,7 +33,9 @@ export const Login = () => {
       dispatch(login({
         email,
         password
-      })).then(() => {if (!loading) { history.push("/protected")}})
+      })).then(() => {if (!loading) { 
+        history.push("/protected")
+      }})
     }
   };
 

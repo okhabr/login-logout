@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import './Register.css';
 
@@ -10,6 +10,8 @@ export const Register = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const loading = useSelector(state => state.auth.loading)
   
   const [user, setUser] = useState({
     name: '',
@@ -31,7 +33,9 @@ export const Register = () => {
         name,
         email,
         password
-      })).then(() => history.push("/protected"));
+      })).then(() => {if (!loading) { 
+        history.push("/protected")
+      }})
     }
   };
 

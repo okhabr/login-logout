@@ -6,7 +6,8 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT,
-    CLEAR_ERRORS
+    CLEAR_ERRORS,
+    LOADING
   } from '../types';
   
   const initialState = {
@@ -72,6 +73,9 @@ import {
       case LOGOUT:
         localStorage.removeItem('token');
         return {...initialState};
+
+      case LOADING:
+        return {...state, loading: true};
 
       case CLEAR_ERRORS:
         return {

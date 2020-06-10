@@ -9,12 +9,18 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  LOADING
 } from '../types';
+
+  // Set loading
+export  const setLoading = () => ({ type: LOADING });
 
   // Load User
 export  const loadUser = () => async (dispatch) => {
     setAuthToken(localStorage.token);
+    
+    dispatch(setLoading())
     try {
       const res = await axios.get('/api/auth');
       dispatch ({
